@@ -4,6 +4,7 @@
     "lib": ["es2015", "dom"],
     "strict": true
   },
-  "files": ["scripts/script.ts",
-            "scripts/menu_scripts.ts"]
+  "files": ["scripts/filters.ts",
+            "scripts/animations.ts",
+            "scripts/snow-system.ts"]
 }

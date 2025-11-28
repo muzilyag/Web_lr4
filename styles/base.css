@@ -1,0 +1,24 @@
+:root {
+    --white: #ffffff;
+    --primary-white: #eaecf0;
+    --primary-black: #0d1421; 
+    --primary-gray: #667085;
+    --primary-dark-gray: #354153;
+    --background: #f5f5f5;
+    --snow-shadow: rgba(255, 255, 255, 0.8);
+}
+
+* {
+    box-sizing: border-box; 
+    margin: 0;
+    font-family: 'Inter';
+}
+
+body {
+    height: 100%;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
