@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Lab4</title>
+        <link rel="stylesheet" href="styles/styles.css"/>
+        <link rel="stylesheet" href="styles/events.css"/>
+        <link rel="stylesheet" href="styles/filtres.css"/>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+            />
+        <link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet"/>
+    </head>
+
+    <body>
+        <header class="header">
+            <nav class="header__nav">    
+                <button class="header__button" onclick="animationBlinkNavButton(this)">
+                    <span class="header__button-text">Посуда</span>
+                </button>
+                <button class="header__button" onclick="animationBlinkNavButton(this)">
+                    <span class="header__button-text">Текстиль</span>
+                </button>
+                <button class="header__button" onclick="animationBlinkNavButton(this)">
+                    <span class="header__button-text">Товары для дома</span>
+                </button>
+            </nav>
+
+            <div class="brand" onclick="animationRotateBrand()">
+                <div class="brand__logo">
+                    <img src="images/logo.svg" alt="Logo"/>
+                </div>
+                <span class="brand__name">Вариант 14</span>
+            </div>
+            
+            <div class="action-section">
+                <button class="action-section__button" onclick="toggleSnow(this)">
+                    <img class="action-section__button_img" src="images/icon-snow.svg" alt="Snow" id="snowIcon"/>
+                </button>
+                <button class="action-section__button" onclick="blinkGradientButton(this)">
+                    <img class="action-section__button_img" src="images/icon-user.svg" alt="Profile"/>
+                </button>
+                <button class="action-section__button" onclick="blinkGradientButton(this)">
+                    <img class="action-section__button_img" src="images/icon-bag.svg" alt="Shopping cart"/>
+                </button>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="subheader">
+                <div class="subheader__content">
+                    <span class="subheader__title" onclick="animationRainbowText()">Все товары</span>
+                    <div class="filters">
+                        <button class="filters__button" onclick="toggleFiltersMenu()">
+                            <div class="filters__button-icon">
+                                <img src="images/icon-filtres.svg" alt="Filters"/>
+                            </div>
+                            <span class="filters__button-text">Фильтры</span>
+                        </button>
+                        
+                        <div class="filters__dropdown" id="filtersDropdown">
+                            <div class="filters__group">
+                                <h3 class="filters__group-title">Тип товара</h3>
+                                <div class="filters__options">
+                                    <label class="filters__option">
+                                        <input type="checkbox" name="product-type" value="bags" class="filters__checkbox" onchange="handleFilterChange()">
+                                        <span class="filters__checkmark"></span>
+                                        <span class="filters__option-text">Сумки</span>
+                                    </label>
+                                    <label class="filters__option">
+                                        <input type="checkbox" name="product-type" value="blankets" class="filters__checkbox" onchange="handleFilterChange()">
+                                        <span class="filters__checkmark"></span>
+                                        <span class="filters__option-text">Пледы</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="filters__group">
+                                <h3 class="filters__group-title">Цвет</h3>
+                                <div class="filters__options">
+                                    <label class="filters__option filters__option--color">
+                                        <input type="checkbox" name="color" value="gray" class="filters__checkbox" onchange="handleFilterChange()">
+                                        <span class="filters__checkmark filters__checkmark--gray"></span>
+                                        <span class="filters__option-text">Серый</span>
+                                    </label>
+                                    <label class="filters__option filters__option--color">
+                                        <input type="checkbox" name="color" value="green" class="filters__checkbox" onchange="handleFilterChange()">
+                                        <span class="filters__checkmark filters__checkmark--green"></span>
+                                        <span class="filters__option-text">Зелёный</span>
+                                    </label>
+                                    <label class="filters__option filters__option--color">
+                                        <input type="checkbox" name="color" value="red" class="filters__checkbox" onchange="handleFilterChange()">
+                                        <span class="filters__checkmark filters__checkmark--red"></span>
+                                        <span class="filters__option-text">Красный</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="products">
+                <div class="product-card"
+                    onmouseenter="animationCardPulseUp(this)" 
+                    onmouseleave="animationCardPulseStop(this)"
+                    onclick="playCardClickPop(this)">
+                    <img class="product-card__image" src="images/img1.png" alt="Messenger bag"/>
+                    <div class="product-card__content">
+                        <div class="product-card__price">2 884 руб</div>
+                        <div class="product-card__name">Сумка мессенджер ДРЁМСЭКК</div>
+                    </div>
+                </div>
+
+                <div class="product-card"
+                    onmouseenter="animationCardPulseUp(this)" 
+                    onmouseleave="animationCardPulseStop(this)"
+                    onclick="playCardClickPop(this)">
+                    <img class="product-card__image" src="images/img2.png" alt="Messenger bag"/>
+                    <div class="product-card__content">
+                        <div class="product-card__price">2 884 руб</div>
+                        <div class="product-card__name">Сумка мессенджер ДРЁМСЭКК</div>
+                    </div>
+                </div>
+
+                <div class="product-card"
+                    onmouseenter="animationCardPulseUp(this)" 
+                    onmouseleave="animationCardPulseStop(this)"
+                    onclick="playCardClickPop(this)">
+                    <img class="product-card__image" src="images/img3.png" alt="Blanket"/>
+                    <div class="product-card__content">
+                        <div class="product-card__price">714 руб</div>
+                        <div class="product-card__name">Плед ВОРКРАГЕ</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="snow-plow" id="snowPlow">
+                <img src="images/petr.png" alt="petr"/>
+            </div>
+        </main>
+
+        <script src="scripts/script.js"></script>
+        <script src="scripts/menu_scripts.js"></script>
+    </body>
+</html>

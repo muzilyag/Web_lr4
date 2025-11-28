@@ -1,0 +1,157 @@
+@keyframes blink {
+    0% {
+        background-color: var(--white);
+        transform: scale(1);
+    }
+    50% {
+        background-color: var(--primary-white);
+        transform: scale(1.05);
+    }
+    100% {
+        background-color: var(--white);
+        transform: scale(1);
+    }
+}
+
+.blink {
+    animation: blink 0.5s ease;
+}
+
+.rotate {
+    animation: moveLeft 1s ease;
+}
+
+@keyframes moveLeft {
+    0% { 
+        transform: translateX(0) rotate(0deg); 
+    }
+    50% { 
+        transform: translateX(-50px) rotate(360deg); 
+    }
+    100% { 
+        transform: translateX(0) rotate(0deg); 
+    }
+}
+
+.rainbow {
+    background: linear-gradient(90deg, 
+        #ff0000, #ff8000, #ffff00, 
+        #00ff00, #00ffff, #0000ff, 
+        #8000ff, #ff00ff, #ff0000);
+    background-size: 400% 100%;
+    animation: rainbow 3s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+@keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 400% 50%; }
+}
+
+@keyframes cardPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+    100% {
+        transform: scale(1.03);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    }
+}
+
+.card-pulse {
+    animation: cardPulse 0.4s ease-in-out forwards;
+}
+
+@keyframes clickPop {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+    51% {
+        transform: scale(1);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.card-click-pop {
+    animation: clickPop 0.8s ease-in-out;
+}
+
+@keyframes blinkShine {
+    0% {
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        box-shadow: 0 0 0 0 #b59df65b;
+    }
+    50% {
+        background: linear-gradient(135deg, #f1f3f5 0%, #e9ecef 100%);
+        box-shadow: 0 0 20px 5px #b59df699;
+    }
+    100% {
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        box-shadow: 0 0 0 0 #b59df65b;
+    }
+}
+
+.blink-shine {
+    animation: blinkShine 0.7s ease-in-out;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10px) rotate(0deg);
+        opacity: 1;
+    }
+    90% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 1;
+    }
+}
+
+.snow-fall {
+    animation: fall linear infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+@keyframes plowMove {
+    0% {
+        left: -200px;
+        transform: translateY(0);
+    }
+    20% {
+        transform: translateY(-10px);
+    }
+    40% {
+        transform: translateY(0);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+    80% {
+        transform: translateY(0);
+    }
+    100% {
+        left: calc(100% + 200px);
+    }
+}

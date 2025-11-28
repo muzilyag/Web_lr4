@@ -1,0 +1,221 @@
+:root {
+    --white: #ffffff;
+    --primary-white: #eaecf0;
+    --primary-black: #0d1421; 
+    --primary-gray: #667085;
+    --primary-dark-gray: #354153;
+    --background: #f5f5f5;
+    --snow-shadow: rgba(255, 255, 255, 0.8);
+}
+
+* {
+    box-sizing: border-box; 
+    margin: 0;
+    font-family: 'Inter';
+}
+
+body {
+    height: 100%;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.header {
+    background-color: var(--white);
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+    height: 72px;
+    padding: 14px;
+    justify-content: space-between;
+    width: 1440px; 
+}
+
+.header__nav {
+    display: flex;
+    gap: 8px;
+}
+
+.header__button {
+    border: 1px solid var(--primary-white);
+    background-color: var(--white);
+    border-radius: 100px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.header__button-text {
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--primary-black);
+}
+
+.brand {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.brand__logo {
+    width: 32px;
+    height: 32px;
+}
+
+.brand__name {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--primary-dark-gray);
+}
+
+.action-section {
+    display: flex;
+    gap: 8px;
+    width: 406px;
+    justify-content: right;
+}
+
+.action-section__button {
+    display: flex;
+    border: 1px solid var(--primary-white);
+    background-color: var(--white);
+    border-radius: 100px;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.4s ease;
+
+}
+
+.action-section__button:hover {
+    transform: scale(1.2);
+    background-color: var(--primary-white);
+}
+
+.action-section__button_img {
+    width: 24px;
+    height: 24px;
+}
+
+.subheader {
+    padding: 32px 0;
+}
+
+.subheader__content {
+    width: 1372px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subheader__title {
+    font-weight: 600;
+    font-size: 1.875rem;
+    color: var(--primary-black);
+    cursor: pointer;
+}
+
+.products {
+    display: flex;
+    gap: 32px;
+}
+
+.product-card {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    gap: 16px;
+    border-radius: 24px;
+    background-color: var(--white);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.product-card__content {
+    padding: 0 24px 24px;
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    gap: 4px;
+}
+
+.product-card__price {
+    font-weight: 500;
+    font-size: 1.875rem;
+    color: var(--primary-black);
+    line-height: 40px;
+}
+
+.product-card__name {
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--primary-black);
+    line-height: 24px;
+}
+
+.snowflake {
+    position: fixed;
+    top: -25px;
+    font-size: 1rem;
+    pointer-events: none;
+    user-select: none;
+    z-index: 3;
+    text-shadow: 0 0 5px var(--snow-shadow);
+    animation: fall linear infinite;
+}
+
+.snowflake::before {
+    content: "❄";
+}
+
+.snowflake-dot::before {
+    content: "•";
+}
+
+.snowflake-star::before {
+    content: "✦";
+}
+
+.snow-plow {
+    position: fixed;
+    left: -200px;
+    bottom: 0px;
+    width: 150px;
+    height: 80px;
+    z-index: 4; /* Повышаем z-index чтобы был выше снега */
+    pointer-events: none;
+    display: none;
+}
+
+.snow-plow img {
+    width: 100%;
+    height: 100%;
+}
+
+.snow-plow.active {
+    display: block;
+    animation: plowMove 3s ease-in-out forwards;
+}
+
+/* Снежинки, которые собираются машинкой */
+.snowflake.collected {
+    animation: snowCollect 1s ease-in forwards;
+    z-index: 5; /* Выше машинки во время сбора */
+}
+
+@keyframes snowCollect {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50px, -30px) scale(0.8);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translate(-100px, -60px) scale(0);
+        opacity: 0;
+    }
+}
