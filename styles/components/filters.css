@@ -38,7 +38,7 @@
     right: 0;
     background: var(--white);
     border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 30px var(--filters-dropdown-shadow);
     min-width: 280px;
     border: 1px solid var(--primary-white);
     width: 240px;
@@ -83,7 +83,7 @@
 }
 
 .filters__option:hover {
-    background-color: #F2F4F7;
+    background-color: var(--options-filters);
     border-radius: 6px;
 }
 
@@ -94,7 +94,7 @@
 .filters__checkmark {
     width: 18px;
     height: 18px;
-    border: 1px solid #EAECF0;
+    border: 1px solid var(--primary-white);
     border-radius: 4px;
     margin-right: 10px;
     position: relative;
@@ -111,7 +111,7 @@
 .filters__checkbox:checked .filters__checkmark::after {
     content: "✓";
     position: absolute;
-    color: white;
+    color: var(--white);
     font-size: 12px;
     top: 50%;
     left: 50%;
@@ -119,18 +119,18 @@
 }
 
 .filters__checkmark--gray, .filters__checkbox:checked .filters__checkmark--gray {
-    background: #B0B0B0;
-    border-color: #B0B0B0;
+    background: var(--gray-checkbox-filters);
+    border-color: var(--gray-checkbox-filters);
 }
 
 .filters__checkmark--green, .filters__checkbox:checked .filters__checkmark--green {
-    background: #517455;
-    border-color: #517455;
+    background: var(--green-checkbox-filters);
+    border-color: var(--green-checkbox-filters);
 }
 
 .filters__checkmark--red, .filters__checkbox:checked .filters__checkmark--red {
-    background: #B05955;
-    border-color: #B05955;
+    background: var(--red-checkbox-filters);
+    border-color: var(--red-checkbox-filters);
 }
 
 .filters__option-text {

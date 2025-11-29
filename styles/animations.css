@@ -40,7 +40,6 @@
         #8000ff, #ff00ff, #ff0000);
     background-size: 400% 100%;
     animation: rainbow 3s linear infinite;
-    -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
 }
@@ -172,11 +171,11 @@
 }
 
 .snowflake-dot::before {
-    content: "•";
+    content: "⛇";
 }
 
 .snowflake-star::before {
-    content: "✦";
+    content: "❉";
 }
 
 .snow-plow {

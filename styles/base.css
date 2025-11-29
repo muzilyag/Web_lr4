@@ -5,6 +5,12 @@
     --primary-gray: #667085;
     --primary-dark-gray: #354153;
     --background: #f5f5f5;
+    --options-filters: #F2F4F7;
+    --gray-checkbox-filters: #B0B0B0;
+    --green-checkbox-filters: #517455;
+    --red-checkbox-filters: #B05955;
+    --filters-dropdown-shadow: rgba(0, 0, 0, 0.15);
+    --product-card-shadow: rgba(0, 0, 0, 0.1);
     --snow-shadow: rgba(255, 255, 255, 0.8);
 }
 
