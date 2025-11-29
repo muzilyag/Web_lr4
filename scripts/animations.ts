@@ -41,27 +41,27 @@ function animationRainbowText(): void {
     }
 }
 
-function animationCardPulseUp(element: HTMLElement): void {
-    element.classList.add('card-pulse');
+function animationCardPulseUp(card: HTMLElement): void {
+    card.classList.add('card-pulse');
 }
 
-function animationCardPulseStop(element: HTMLElement): void {
-    element.classList.remove('card-pulse');
+function animationCardPulseStop(card: HTMLElement): void {
+    card.classList.remove('card-pulse');
 }
 
-function playCardClickPop(element: HTMLElement): void {
-    element.classList.remove('card-pulse');
-    element.classList.remove('card-click-pop');
-    void (element as any).offsetWidth;
-    element.classList.add('card-click-pop');
+function playCardClickPop(card: HTMLElement): void {
+    card.classList.remove('card-pulse');
+    card.classList.remove('card-click-pop');
+    void (card as any).offsetWidth;
+    card.classList.add('card-click-pop');
     setTimeout(() => {
-        element.classList.remove('card-click-pop');
+        card.classList.remove('card-click-pop');
     }, 800);
 }
 
-function blinkGradientButton(element: HTMLElement): void {
-    element.classList.add("blink-shine");
+function blinkGradientButton(button: HTMLElement): void {
+    button.classList.add("blink-shine");
     setTimeout(() => {
-        element.classList.remove('blink-shine');
+        button.classList.remove('blink-shine');
     }, 1500);
 }
